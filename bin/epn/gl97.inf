@@ -1,0 +1,49 @@
+ Profile from Gould & Lyne (1997)
+J1834-0426    ! Pulsar J2000 name
+B1831-04      ! Pulsar's common name (B1950 for pulsars discovered <~1990)
+0.520954      ! Catalogue pulse period (seconds)
+88            ! Catalogue DM (pc/cc)      
+4.862         ! Catalogue RM (rad/m^2)
+tml93         ! Catalogue Reference (tml93=Taylor, Manchester & Lyne 1993)
+gl97          ! Bib reference tag for publication     
+278.6067439   ! RA  (J2000) in degrees
+-4.437615419  ! DEC (J2000) in degrees
+lovell        ! Telescope name (8 characters max)
+3822252.643   ! Topocentric recangular position of telescope [m] XTEL
+-153995.683   ! Topocentric recangular position of telescope [m] YTEL
+5086051.443   ! Topocentric recangular position of telescope [m] ZTEL
+0.0           ! MJD EPOCH 0.0 if unknown
+0.0           ! Position angle (PA) of feed (degrees)
+              ! "A" signifies absolute PAs else undefined
+              ! "U" signifies UTC time "B" barycentric UTC 
+              ! "F" signifies flux (mJy) calibrated data
+4 1           ! Npol, Nfreq - see "epnhdr.inc" for explanation
+I             ! IDfield of channel (I=Total Intensity)
+606.0         ! Reference frequency of this data stream
+ MHz          ! Unit of frequency
+4.0           ! Bandwidth of data stream
+ MHz          ! Unit of dandwidth
+0.0           ! Number of us elapsed since EPOCH (0.0 if unknown)
+0.520954      ! Apparent period at time of first phase bin (seconds)
+Q             ! IDfield of channel (Q=Stokes Q)
+606.0         ! Reference frequency of this data stream
+ MHz          ! Unit of frequency
+4.0           ! Bandwidth of data stream
+ MHz          ! Unit of dandwidth
+0.0           ! Number of us elapsed since EPOCH (0.0 if unknown)
+0.520954      ! Apparent period at time of first phase bin (seconds)
+U             ! IDfield of channel (U=Stokes U)
+606.0         ! Reference frequency of this data stream
+ MHz          ! Unit of frequency
+4.0           ! Bandwidth of data stream
+ MHz          ! Unit of dandwidth
+0.0           ! Number of us elapsed since EPOCH (0.0 if unknown)
+0.520954      ! Apparent period at time of first phase bin (seconds)
+V             ! IDfield of channel (V=Stokes V)
+606.0         ! Reference frequency of this data stream
+ MHz          ! Unit of frequency
+4.0           ! Bandwidth of data stream
+ MHz          ! Unit of dandwidth
+0.0           ! Number of us elapsed since EPOCH (0.0 if unknown)
+0.520954      ! Apparent period at time of first phase bin (seconds)
+360.0         ! Number of degrees of phase that the ASCII profile represents

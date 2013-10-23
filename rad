@@ -1,0 +1,75 @@
+#/bin/bash
+Usage ()
+	{
+	echo
+        echo "                          Welcome to RAD"
+        echo "          This package is developed by Devansh Agarwal"
+        echo "                  email : devansh@iisertvm.ac.in"
+	echo
+	echo "				Incorrect usage : Found Less arguments."
+	echo "Useage : rad		-f <\"frequency\">	: Input 0410  0600 0800 1400 1600 4800 all (either of them)"
+	echo "			-p <\"plots\">		: plots degree of polarization vs pulsar parameters 1 (yes) / 0 (no)"
+	echo 
+	echo 
+	}
+time_start=`date '+%T%t%d_%h_06'`
+echo "$time_start"
+if test $# -lt 1
+        then
+        Usage
+        exit -1
+fi
+#Get the arguments
+	echo
+	echo "                          Welcome to RAD"
+        echo "          This package is developed by Devansh Agarwal"
+        echo "                  email : devansh@iisertvm.ac.in"
+	echo "				ver 1.10"
+
+
+rm -rf ${workingdir}/temp/*
+rm -rf ${workingdir}/res/*
+
+workingdir=`pwd`
+
+# 1. Generate Working dir lists
+
+	if [[ $2 == "all" ]];
+		then
+		${workingdir}/bin/dir_list_gen.sh
+		else
+		freq=$2
+		${workingdir}/bin/dir_list_gen.sh -f $2 
+	fi
+
+# 2. Generate dpi lists
+
+	rm -rf ${workingdir}/temp/*.psr $workingdir/temp/*.atn
+	${workingdir}/bin/dpi_producer.sh
+	echo "Done!"
+
+
+# 3. Combine ATNF results
+	rm -rf ${workingdir}/res/*
+	${workingdir}/bin/atnf_dat.sh
+	echo "Done!"
+	
+# 4. Make plots
+
+	if [[ $4 == 1 ]];then
+		echo "No plots generated"
+		echo "Goto ${workingdir}/res for datasheets"
+		else
+		#use gnulplot
+		echo "Makigng Plots"
+		${workingdir}/bin/plot_generator.sh>rum
+		#${workingdir}/bin/cpi_plot_generator.sh>rum
+		echo "All plots generated"
+		echo "Goto ${workingdir}/res for generated plots and datasheets"
+	fi
+# 5. Removal of temp files
+	rm -rf ${workingdir}/temp/*
+	rm -rf rum
+
+time_end=`date '+%T%t%d_%h_06'`
+echo "$time_end"

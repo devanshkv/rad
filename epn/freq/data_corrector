@@ -1,0 +1,17 @@
+#!/bin/bash
+for line in `grep "V" \`ls -1 ????/*\` | cut -d: -f 1`
+	do
+	rm -rf dat? header
+	echo "doing ${line}"
+	cat ${line} | tail -n +3 > dat0
+	cat ${line} | head -n +2 > header
+	cat dat0 | awk '{printf"%.15f\n",$1}' >dat1
+	cat dat0 | awk '{printf"%.15f\n",$2}' >dat2
+	cat dat0 | awk '{printf"%.15f\n",$3}' >dat3
+	cat dat0 | awk '{printf"%.15f\n",$4}' >dat4
+	cat dat0 | awk '{printf"%.15f\n",$5}' >dat5
+	paste dat1 dat2 dat3 dat4 dat5 >> header
+	mkdir -p new/`echo "${line}" | cut -d/ -f1`
+	mv header new/`echo "${line}" | cut -d/ -f1`/`echo "${line}" | cut -d/ -f2`
+	rm -rf dat? header
+	done

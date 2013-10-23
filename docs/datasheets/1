@@ -1,0 +1,9 @@
+#!/bin/bash
+for line in `cat Welterverde+2008`
+	do
+	echo "${line}\t\n"
+#		if [[ 20 = `echo "${line}" | awk '{print $3}' | grep "20"` ]]
+#			then
+#			echo "${line}"
+#			fi
+	done

@@ -1,0 +1,57 @@
+#
+# Makefile for generalised EPN format routines.... (DRL@MPIfR-25/11/1996)
+# for use with Microsoft Power Station(FL32)
+#       Root Directory
+SRC=C:
+#       PGPLOT library
+LIBPG=$(SRC)\packages\pgplot\lib\PGPLOT.LIB
+#       Fortran compiler
+FCOMPL=FL32
+#       Rules for compiling Fortran
+FFLAGC=/Op /nologo
+
+#       Rules for compiling Fortran
+.SUFFIXES: .F
+
+.F{}.OBJ:
+        $(FCOMPL) /c $(FFLAGC) /Tf$<
+
+all: plotepn viewepn asc2epn
+
+plotepn: plotepn.exe
+
+plotepn.exe: plotepn.f rwepn.obj arg.obj
+        $(FCOMPL) $(FFLAGC) /Tf plotepn.f rwepn.obj arg.obj $(LIBPG)
+        mv plotepn.exe $(SRC)\bin
+
+viewepn: viewepn.exe
+
+viewepn.exe: viewepn.f rwepn.obj arg.obj
+        $(FCOMPL) $(FFLAGC) /Tf viewepn.f rwepn.obj arg.obj
+        mv viewepn.exe $(SRC)\bin
+
+asc2epn: asc2epn.exe
+
+asc2epn.exe: asc2epn.f rwepn.obj arg.obj
+        $(FCOMPL) $(FFLAGC) /Tf asc2epn.f rwepn.obj arg.obj
+        mv asc2epn.exe $(SRC)\bin
+
+example: example.exe
+
+example.exe: example.f rwepn.obj arg.obj
+        $(FCOMPL) $(FFLAGC) /Tf example.f rwepn.obj arg.obj
+
+rwepn.obj : rwepn.f
+        $(FCOMPL) /c $(FFLAGC) /Tf rwepn.f
+
+arg.obj : arg.f
+        $(FCOMPL) /c $(FFLAGC) /Tf arg.f
+
+clean:
+        del *.obj 
+
+copy:
+        copy makefile a:\makefile.msf
+        copy pcnotes a:
+        copy epnhdr.inc a:
+        copy *.f a:

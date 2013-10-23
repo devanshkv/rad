@@ -1,0 +1,19 @@
+rm -rf width.gnu
+echo "set term x11"										>> width.gnu
+echo "set key"					                                                >> width.gnu
+echo "set grid"                                                                                 >> width.gnu
+echo "set key font \"helvetica , 13\""                                                          >> width.gnu
+echo "pl \"sym\" u 1:2w p"									>> width.gnu
+echo "set terminal pdf color"                                                                   >> width.gnu
+echo "set xlabel \"degree of sym\""								>> width.gnu
+echo "set ylabel \"their dpi"									>> width.gnu
+echo "set key"                                                                                  >> width.gnu
+echo "set grid"                                                                                 >> width.gnu
+echo "set key font \"helvetica , 13\""                                                          >> width.gnu
+echo "set output 'symvsdpi.pdf'"								>> width.gnu
+echo "rep"											>> width.gnu
+gnuplot < "width.gnu"
+rm -rf width.gnu
+
+
+

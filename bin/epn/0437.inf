@@ -1,0 +1,28 @@
+ Profile from Bell et al. (1997)
+J0437-4715    ! Pulsar J2000 name
+J0437-4715    ! Pulsar's common name (B1950 for pulsars discovered <~1990)
+0.00575745    ! Catalogue pulse period (seconds)
+2.64525       ! Catalogue DM (pc/cc)
+0.0           ! Catalogue RM (rad/m^2)
+tml93         ! Catalogue Reference (tml93=Taylor, Manchester & Lyne 1993)
+bbm+97        ! Bib reference tag for publication
+69.3156       ! RA  (J2000) in degrees
+-47.2523      ! DEC (J2000) in degrees
+parkes        ! Telescope name (8 characters max)
+-4553976.8199 ! Topocentric recangular position of telescope [m] XTEL
+ 2816804.1281 ! Topocentric recangular position of telescope [m] YTEL
+-3454121.6870 ! Topocentric recangular position of telescope [m] ZTEL
+0.0           ! MJD EPOCH 0.0 if unknown
+0.0           ! Position angle (PA) of feed (degrees)
+              ! "A" signifies absolute PAs else undefined
+              ! "U" signifies UTC time "B" barycentric UTC 
+              ! "F" signifies flux (mJy) calibrated data
+1 1           ! Npol, Nfreq - see "epnhdr.inc" for explanation
+I             ! IDfield of channel (I=Total Intensity)
+1.52          ! Reference frequency of this data stream
+ GHz          ! Unit of frequency
+320.0         ! Bandwidth of data stream
+ MHz          ! Unit of dandwidth
+0.0           ! Number of us elapsed since EPOCH (0.0 if unknown)
+0.00575745    ! Apparent period at time of first phase bin (seconds)
+360.0         ! Number of degrees of phase that the ASCII profile represents
