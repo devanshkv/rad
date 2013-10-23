@@ -1,0 +1,20 @@
+RAD, this package is developed by Devansh Agarwal (email : devansh@iisertvm.ac.in).
+It calcualtes degree of polarization given EPN (or EPN like) files containing stokes data.
+Final Result incudes data sheets in res folder combined with ATNF data and respective plots.
+
+REQUIREMENTS
+1. gcc
+2. python with numpy and scipy
+3. gnuplot
+
+Ver 1.10
+Fixed problems in datasheets with extra values in the end.
+
+Ver 1.20
+Fixed problems in datasheets with empty values in the end.
+
+Ver 1.30
+Included W50 feature, Calculated width at 50% of the peak value
+
+Ver 1.40
+
